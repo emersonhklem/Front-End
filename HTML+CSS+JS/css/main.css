@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 320px) {
+    .jl-page-wrapper{
+        width: 100%;
+        height: 100vh;
+        display: block;
+        background-color:#1C1C1C ;
+        border: 30px solid #000; 
+
+    }
+    .jl-topbar{
+        width: 100%;
+        height: 110px;
+        display: block;
+        background-color:transparent;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .jl-logo{
+        width: 74px;
+        height: 110px;
+        float:left;
+        margin-left: 60px;
+        background-color: #2CCB69;
+        border-radius: 0 0 37px 0;
+        
+    }
+    
+    .jl-logo img{
+        width: 46px;
+        height: 31px;
+        display: block;
+        margin: 55px auto 0 auto;
+    }
+
+    .jl-menu{
+        display: none;
+    }
+    .jl-btn-contact{
+        width: 45px;
+        height: 45px;
+        display: block;
+        background-color: #2CCB69;
+        background-image: url('../images/icon-contact-close.svg');
+        background-repeat: no-repeat; 
+        position: fixed;
+        bottom: 45px;
+        right: 45px;
+        border-radius: 50%;
+        z-index: 200;
+        transition: all 0.2s ease-out;
+    }
+    .jl-btn-contact:hover{
+        background-position-y: -45px;
+    }
+    
+}
+@media screen and (min-width: 576px) {
+    
+}
+@media screen and (min-width: 768px) {
+    
+}
+@media screen and (min-width: 992px) {
+    .jl-menu{
+        display: table;
+        float: left;
+        height: 110px;
+        margin-left: 30px;
+    }
+    .jl-menu a{
+        font-family: 'Open Sans';
+        font-size: 16px;
+        color: #bcbcbc;
+        text-decoration: none;
+        text-transform: lowercase;
+        display: inline-block;
+        margin: 50px 20px 0 20px;
+        font-weight: 400;
+        position: relative;
+    }
+    .jl-menu a:first-child{
+        margin-left: 0;
+    }
+    .jl-menu a:hover{
+        color: #2CCB69;
+    }
+    .jl-menu a:before{
+        content: '';
+        width: 100%;
+        height: 4px;
+        background-color:#2CCB69 ;
+        display: block;
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        transition: all 0.2s ease-out;
+        transform: scale(0, 1);
+        transform-origin: center left;
+    }
+
+    .jl-menu a:hover:before{   
+        transform: scale(1, 1);
+    }
+}
+@media screen and (min-width: 1200px) {
+    
+}
+@media screen and (min-width: 1364px) {
+    
+}
+@media screen and (min-width: 1600px) {
+    
+}
