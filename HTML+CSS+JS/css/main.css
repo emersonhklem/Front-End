@@ -2,17 +2,42 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+
+    }
+
 }
 
 @media screen and (min-width: 320px) {
-    .jl-page-wrapper{
+    .jl-page-wrapper, .jl-preloader{
         width: 100%;
         height: 100vh;
-        display: block;
+        display: table;
         background-color:#1C1C1C ;
         border: 30px solid #000; 
 
     }
+    .jl-preloader{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+    }
+    
     .jl-topbar{
         width: 100%;
         height: 110px;
@@ -55,9 +80,66 @@
         border-radius: 50%;
         z-index: 200;
         transition: all 0.2s ease-out;
+        border: none;
+        cursor: pointer;
     }
-    .jl-btn-contact:hover{
-        background-position-y: -45px;
+   
+    .jl-contact-info {
+        width: 245px;
+        height: 165px;
+        display: none;
+        padding: 25px;
+        position: fixed;
+        bottom: 115px;
+        right: 65px;
+        z-index: 200;
+    }
+    .jl-contact-info-inner{
+        display: table;
+        width: 100%;
+        float: right;
+    }
+    .jl-contact-info-inner p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .jl-social-links{
+        width: 100%;
+        height: 45px;
+        display: block;
+        position: relative;
+        left: -12px;
+        margin-top: 7px;
+    }
+    .jl-social{
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+        
+    }
+
+    .jl-social > img {
+        width: 20px;
+        height: auto;
+        display: block;
+        margin: 13px auto 0;
+    }
+    .jl-corner{
+        width: 25px;
+        height: 25px;
+        display: block;
+        float: right;
+        display:relative; 
+    }
+    .jl-corner:after{
+        content: '';
+        width: 25px;
+        height: 25px;
+        display: block;
+        position:absolute;
+        bottom: -23px;
+        right: -1px;
+        background: transparent url('../images/corner.svg') no-repeat;
     }
     
 }
@@ -108,6 +190,7 @@
     .jl-menu a:hover:before{   
         transform: scale(1, 1);
     }
+    
 }
 @media screen and (min-width: 1200px) {
     
@@ -118,3 +201,91 @@
 @media screen and (min-width: 1600px) {
     
 }
+
+/* CLASSES UTILITÁRIAS */
+
+    .jl-title{
+        font-family: 'Abril Fatface', serif;
+        font-weight: normal;
+    }
+    .jl-text-green{
+        color: #2CCB69;
+    }
+    .jl-text-dark{
+        color: #4D4C4C;
+    }
+    .jl-text-light{
+        color: #bcbcbc;
+    }
+    .jl-text-black{
+        color: #000;
+    }
+
+
+    .jl-bg-green{
+        background-color: #2CCB69;
+    }
+    .jl-bg-dark{
+        background-color: #4D4C4C;
+    }
+    .jl-bg-light{
+        background-color: #bcbcbc;
+    }
+    .jl-bg-black{
+        background-color: #000;
+    }
+
+
+    .jl-mar-15{
+        margin: 15px;
+    }
+    .jl-mar-top-15{
+        margin: 15px;
+    }
+    .jl-mar-right-15{
+        margin: 15px;
+    }
+    .jl-mar-bottom-15{
+        margin: 15px;
+    }
+    .jl-mar-left-15{
+        margin: 15px;
+    }
+
+    .jl-pad-15{
+        padding: 15px;
+    }
+    .jl-pad-top-15{
+        padding: 15px;
+    }
+    .jl-pad-right-15{
+        padding: 15px;
+    }
+    .jl-pad-bottom-15{
+        padding: 15px;
+    }
+    .jl-pad-left-15{
+        padding: 15px;
+    }
+
+    .jl-full-height{
+        height: 100vh;
+        background-color: yellow;
+        border-bottom: 5px solid #2CCB69;
+    }
+    .jl-first-section{
+        height: calc(100vh - 30px);
+    }
+
+    /* CLASSES COMPORTAMENTO*/
+
+    .jl-is-open{
+        display: block;
+    }
+
+    .jl-change-icon{
+        background-position-y: -45px;
+    }
+    .jl-fade-out{
+        animation: fadeOut 2s forwards ease-out;
+    }
