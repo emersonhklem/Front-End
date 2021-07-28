@@ -24,6 +24,11 @@ p, label{
         opacity: 1;
     }
 }
+@keyframes scaleRight {
+    to{
+        transform: scaleX(1);
+    }
+}
 
 
 @keyframes lineDown {
@@ -381,7 +386,7 @@ p, label{
         background-color: #4d4d4d;
     }
     .jl-item-navigator a.jl-item-active {
-        width: 67px;
+        
         background-color: #2CCB69;
     }
     .jl-item-navigator a:last-child {
@@ -407,7 +412,7 @@ p, label{
     }
 
     .jl-item-prev, .jl-item-next {
-        width: 45px;
+        width: 30px;
         color: #2CCB69;
         text-align: center;
         cursor: pointer;
@@ -419,7 +424,7 @@ p, label{
         font-size: 32px;
     }
     .jl-slider-container{
-        background-color: white;
+        
         display: block;
         overflow: hidden;
     }
@@ -427,13 +432,46 @@ p, label{
         width: auto;
         height: 500px;
         display: block;
-        background-color: deeppink;
+       
         list-style: none;
     }
     .jl-slider-item {
         display: block;
         height: 350px;
         float: left;
+        margin-top: calc(30vh - 75px);
+    }
+
+    .jl-portfolio-item-info {
+        width: calc(100% - 30px);
+        display: table;
+        margin-top: 40px;
+    }
+    .jl-portfolio-item-thumb {
+        width: 100%;
+        display: table;
+        padding: 50px 0;
+        position: relative;
+        right: -70px;
+    }
+    .jl-portfolio-item-box{
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: #2c2c2c;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+
+    .jl-portfolio-item-thumb img{
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        position: relative;
+        left: -50px;
     }
     
 }
@@ -555,8 +593,11 @@ p, label{
         font-family: 'Abril Fatface', serif;
         font-weight: normal;
     }
+    .jl-title-large {
+        font-size: 44px;
+    }
 
-    .jl-title-big {
+    .jl-title-xlarge {
         font-size: 120px;
     }
     .jl-text-green{
@@ -619,6 +660,38 @@ p, label{
         padding: 15px;
     }
 
+    .jl-mar-30{
+        margin: 30px;
+    }
+    .jl-mar-top-30{
+        margin-top: 30px;
+    }
+    .jl-mar-right-30{
+        margin-right: 30px;
+    }
+    .jl-mar-bottom-30{
+        margin-bottom: 30px;
+    }
+    .jl-mar-left-30{
+        margin-left: 30px;
+    }
+
+    .jl-pad-30{
+        padding: 30px;
+    }
+    .jl-pad-top-30{
+        padding: 30px;
+    }
+    .jl-pad-right-30{
+        padding: 30px;
+    }
+    .jl-pad-bottom-30{
+        padding: 30px;
+    }
+    .jl-pad-left-30{
+        padding: 30px;
+    }
+
     .jl-full-height{
         height: 100vh;
         position: relative;
@@ -644,6 +717,9 @@ p, label{
     }
     .jl-fade-out{
         animation: fadeOut 2s forwards ease-out;
+    }
+    .jl-scale-right{
+        animation: scaleRight 0.7s 0.2s forwards cubic-bezier(0,1.01,.32,1)
     }
     .jl-no-radius-left {
         border-top-left-radius: 0;
