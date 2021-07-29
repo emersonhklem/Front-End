@@ -17,6 +17,14 @@ p, label{
     }
 
 }
+@keyframes fadeFromLeft {
+    to {
+        left: 0;
+        opacity: 1;
+
+    }
+
+}
 
 @keyframes slideTopIn {
     to {
@@ -27,6 +35,11 @@ p, label{
 @keyframes scaleRight {
     to{
         transform: scaleX(1);
+    }
+}
+@keyframes scaleUp {
+    to{
+        transform: scale(1);
     }
 }
 
@@ -174,6 +187,7 @@ p, label{
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 900;
     }
     .jl-logo{
         width: 74px;
@@ -231,7 +245,7 @@ p, label{
         font-size: 18px;
         line-height: 24px;
     }
-    .jl-social-links{
+    .jl-social-links, .jl-social-links-cicle{
         width: 100%;
         height: 45px;
         display: block;
@@ -239,11 +253,30 @@ p, label{
         left: -12px;
         margin-top: 7px;
     }
-    .jl-social{
+    .jl-social-links-cicle{
+        left: 0;
+    }
+  
+    .jl-social, .jl-social-links-cicle .jl-social{
         width: 45px;
         height: 45px;
         display: inline-block;
         
+    }
+    .jl-social-links-cicle .jl-social{
+      border-radius: 50%;
+      text-align: center;
+      transition: all 0.2s ease-out;
+    }
+    .jl-social-links-cicle .jl-social ion-icon{
+        height: 45px;
+        transition: all 0.2s ease-out;
+    }
+    .jl-social-links-cicle .jl-social:hover{
+        background-color: #000 ;
+    }
+    .jl-social-links-cicle .jl-social:hover ion-icon{
+        color: #2CCB69;
     }
 
     .jl-social > img {
@@ -435,26 +468,45 @@ p, label{
        
         list-style: none;
     }
-    .jl-slider-item {
+    .jl-slider-list .jl-portfolio-item {
         display: block;
         height: 350px;
         float: left;
         margin-top: calc(30vh - 75px);
     }
+    .jl-portfolio-list .jl-portfolio-item{
+        margin-bottom: 70px;
+    }
 
-    .jl-portfolio-item-info {
+    .jl-slider-list .jl-portfolio-item-info {
         width: calc(100% - 30px);
         display: table;
         margin-top: 40px;
+        position: relative;
+        opacity: 0;
+        left: -75px;
     }
-    .jl-portfolio-item-thumb {
+    .jl-portfolio-list .jl-portfolio-item-info {
+        width: calc(100% - 30px);
+       
+    }
+    .jl-portfolio-list{
+        list-style: none;
+    }
+    .jl-slider-list .jl-portfolio-item-thumb, .jl-portfolio-list .jl-portfolio-item-thumb {
         width: 100%;
         display: table;
-        padding: 50px 0;
+        padding: 50px 0 19px 0;
         position: relative;
         right: -70px;
     }
-    .jl-portfolio-item-box{
+    .jl-slider-list .jl-portfolio-item-thumb > button, .jl-portfolio-list .jl-portfolio-item-thumb > button{
+        margin-top: 17px;
+        margin-right: 50px;
+        float:right;
+
+    }
+    .jl-slider-list .jl-portfolio-item-box{
         width: 100%;
         height: 100%;
         display: block;
@@ -465,15 +517,77 @@ p, label{
         transform: scaleX(0);
         transform-origin: right;
     }
+    .jl-portfolio-list .jl-portfolio-item-box{
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: #2c2c2c;
+        position: absolute;
+        top: 0;
+        left: 0;
+       
+    }
 
-    .jl-portfolio-item-thumb img{
+    .jl-slider-list .jl-portfolio-item-thumb img{
         width: 100%;
         max-width: 100%;
         height: auto;
         position: relative;
         left: -50px;
+        transform: scale(0);
+    }
+    .jl-portfolio-list .jl-portfolio-item-thumb img{
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        position: relative;
+        left: -50px;
+        
+    }
+   
+    
+
+    /* ----- PORTFOLIO ----- */
+
+    .jl-section-offset-top{
+        margin-top: 110px;
+    }
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info{
+       text-align: right;
+       margin-top: 35px;
     }
     
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info button{
+        float: right;
+     }
+     
+     .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info{
+        margin-left: 170px;
+     }
+     
+     .jl-portfolio-list .jl-portfolio-item:nth-child(even) > .row{
+         flex-direction: row-reverse;
+      
+
+     }
+
+     .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-thumb button{
+        float: left;
+        margin-left: 50px;
+     }
+     .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-thumb img{
+       left: 50px;
+     }
+
+     /* ----- SOBRE ----- */
+
+     #jl-avatar-sobre img{
+         position: relative;
+         left: -12px;
+
+     }
+
+
 }
 @media screen and (min-width: 576px) {
     
@@ -543,6 +657,14 @@ p, label{
     border: none;
     transition: all 0.2s ease-out;
     text-transform: lowercase;
+    position: relative;
+}
+.jl-btn ion-icon {
+    font-size: 21px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 2px;
+    margin-top: -3px;
 }
 .jl-btn-block {
     display: block;
@@ -551,7 +673,8 @@ p, label{
 
 
 .jl-btn-small {
-    height: 20px;
+    height: 28px;
+    line-height: 28px;
     padding: 0 20px;
     border-radius: 14px;
     font-size: 11px;
@@ -559,6 +682,7 @@ p, label{
 }
 .jl-btn-medium {
     height: 38px;
+    line-height: 38px;
     padding: 0 27px;
     border-radius: 19px;
     font-size: 14px;
@@ -566,6 +690,7 @@ p, label{
 }
 .jl-btn-large {
     height: 45px;
+    line-height: 45px;
     padding: 0 35px;
     border-radius: 23px;
     font-size: 16px;
@@ -593,12 +718,16 @@ p, label{
         font-family: 'Abril Fatface', serif;
         font-weight: normal;
     }
+    .jl-subtitle{
+        font-family: 'Open Sans', serif;
+        font-weight: 800;
+    }
     .jl-title-large {
         font-size: 44px;
     }
 
     .jl-title-xlarge {
-        font-size: 120px;
+        font-size: 90px;
     }
     .jl-text-green{
         color: #2CCB69;
@@ -660,6 +789,39 @@ p, label{
         padding: 15px;
     }
 
+
+    .jl-mar-20{
+        margin: 20px;
+    }
+    .jl-mar-top-20{
+        margin-top: 20px;
+    }
+    .jl-mar-right-20{
+        margin-right: 20px;
+    }
+    .jl-mar-bottom-20{
+        margin-bottom: 20px;
+    }
+    .jl-mar-left-20{
+        margin-left: 20px;
+    }
+
+    .jl-pad-20{
+        padding: 20px;
+    }
+    .jl-pad-top-20{
+        padding: 20px;
+    }
+    .jl-pad-right-20{
+        padding: 20px;
+    }
+    .jl-pad-bottom-20{
+        padding: 20px;
+    }
+    .jl-pad-left-20{
+        padding: 20px;
+    }
+
     .jl-mar-30{
         margin: 30px;
     }
@@ -703,6 +865,41 @@ p, label{
     .jl-no-padding {
         padding: 0 !important;
     }
+    .jl-box-img{
+        width: 100%;
+        display: table;
+    }
+
+    .jl-img-responsive{
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    .jl-page-list{
+        list-style: none;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .jl-page-list > li{
+        font-size: 14px;
+        line-height: 21px;
+        margin-bottom: 15px;
+        padding-left: 20px;
+        position: relative;
+
+    }
+    .jl-page-list > li::before{
+        content: '';
+        width: 8px;
+        height: 8px;
+        display: block;
+        border-radius: 50%;
+        position: absolute;
+        top: 7px;
+        left: 0;
+        background-color: #2CCB69;
+
+    }
 
     /* CLASSES COMPORTAMENTO*/
 
@@ -718,9 +915,16 @@ p, label{
     .jl-fade-out{
         animation: fadeOut 2s forwards ease-out;
     }
+    .jl-fade-from-left{
+        animation: fadeFromLeft 2s 0.7s forwards cubic-bezier(0,1.01,.32,1);
+    }
     .jl-scale-right{
         animation: scaleRight 0.7s 0.2s forwards cubic-bezier(0,1.01,.32,1)
     }
+    .jl-scale-up{
+        animation: scaleUp 0.5s 0.5s forwards cubic-bezier(0,1.01,.32,1)
+    }
+
     .jl-no-radius-left {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;

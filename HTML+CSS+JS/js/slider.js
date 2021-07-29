@@ -3,7 +3,7 @@
 //Declarando variáveis  do slider
 var sliderContainer = document.querySelector('.jl-slider-container');
 var sliderList = document.querySelector('.jl-slider-list');
-var sliderItem = document.querySelectorAll('.jl-slider-item');
+var sliderItem = document.querySelectorAll('.jl-portfolio-item');
 const sliderTotalItems = sliderItem.length;
 var sliderListWidth = null;
 var prevItem = document.querySelector('.jl-item-prev');
@@ -123,6 +123,8 @@ var setActiveSlide = function () {
         if (mySlideNum === currentCounter) {
             sliderItem[sld].classList.add('jl-slide-active');
             sliderItem[sld].querySelector('.jl-portfolio-item-box').classList.add('jl-scale-right');
+            sliderItem[sld].querySelector('.jl-portfolio-item-thumb img').classList.add('jl-scale-up');
+            sliderItem[sld].querySelector('.jl-portfolio-item-info').classList.add('jl-fade-from-left');
         }
     }
 }
@@ -138,6 +140,9 @@ var changeActive = function () {
     }
     for (var rms = 0; rms < sliderItem.length; rms++) {
         sliderItem[rms].classList.remove('jl-slide-active');
+        sliderItem[rms].querySelector('.jl-portfolio-item-box').classList.remove('jl-scale-right');
+        sliderItem[rms].querySelector('.jl-portfolio-item-thumb img').classList.remove('jl-scale-up');
+        sliderItem[rms].querySelector('.jl-portfolio-item-info').classList.remove('jl-fade-from-left');
 
 
     }
