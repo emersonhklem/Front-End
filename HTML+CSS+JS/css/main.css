@@ -117,7 +117,7 @@ p, label{
     .jl-overlay {
         width: 100%;
         height: 100vh;
-        display: none;
+        display: block;
         position: fixed;
         z-index: 1000;
         top: 0;
@@ -643,6 +643,35 @@ p, label{
          display: table;
          padding: 45px 0;
      }
+     .jl-pre-gallery{
+         padding-bottom: 350px;
+     }
+     .jl-post-gallery{
+         display: block;
+     }
+     .jl-post-gallery .container{
+        position: relative;
+        top: -270px;
+    }
+    
+    .jl-gallery-frame-container{
+        width: 280px;
+        display: table;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        z-index: 1100;
+    }
+    .jl-gallery-frame{
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+       
+
+    }
+
 
 
 

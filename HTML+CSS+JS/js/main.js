@@ -1,6 +1,6 @@
 //Declarando variáveis
 var btnContact = document.querySelector('.jl-btn-contact');
-var toggleModal = document.querySelectorAll('.jl-toggle-modal')
+var toggleModal = document.querySelectorAll('.jl-toggle-modal');
 
 //Page Preloader
 window.addEventListener('load', function () {
@@ -31,19 +31,24 @@ for (var i = 0; i < toggleModal.length; ++i) {
 
         overlay.classList.toggle('jl-is-open');
         modalOrcamento.classList.toggle('jl-is-open');
-        modalOrcamento.classList.toggle('jl-slide-top-in')
+        modalOrcamento.classList.toggle('jl-slide-top-in');
 
 
     })
 }
 
+var postGallery = document.querySelector('.jl-post-gallery');
+var postGalleryHeight = postGallery.clientHeight;
+postGallery.style.height = (postGalleryHeight - 270) + 'px';
+
 //Animando elementos com scroll com Waypoints   
-var myScrollDown = document.querySelector('.jl-scroll-down')
+var myScrollDown = document.querySelector('.jl-scroll-down');
 var waypoint = new Waypoint({
     element: myScrollDown,
     handler: function () {
-        myScrollDown.classList.toggle('jl-fade-out')
+        myScrollDown.classList.toggle('jl-fade-out');
     },
     offset: '80%'
 })
+
 
