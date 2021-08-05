@@ -87,6 +87,13 @@ p, label{
 
 }
 
+@keyframes skeletonBlur{
+    to {
+        background-position: 250% -150px;
+    }
+
+}
+
 
 
 
@@ -594,22 +601,26 @@ p, label{
          background-size: cover;
          background-position: center;
          display: block;
+         
+       
      }
-     
      
     .jl-hero h1{
-    
         margin-bottom: 50px;
+       
     }
      .jl-hero-inner{
-         height: 400px;
-         
+         height: 400px;  
+       
      }
      .jl-hero-inner-content{
-         position: relative;
+         position: relative; 
+      
+    
      }
      .jl-hero-inner-content p{
         margin-bottom: 15px;
+   
     }
      .jl-hero-inner-content:before{
          content: '';
@@ -622,14 +633,20 @@ p, label{
          top: -30px;
          box-sizing: content-box;
          padding: 30px;
-        
+           
+     }
+     .jl-zindex-1000{
+         position: relative;
+         z-index: 100;
      }
      .jl-project-stats{
          width: 100%;
          height: 100%;
          display: table;
          border-right: 1px solid #2CCB69;
+        
      }
+
      .jl-post{
          width: 100%;
          display: table;
@@ -655,7 +672,7 @@ p, label{
     }
     
     .jl-gallery-frame-container{
-        width: 280px;
+        width: 250px;
         display: none;
         position: fixed;
         top: 50px;
@@ -671,6 +688,42 @@ p, label{
         position: relative;
 
 
+    }
+    .jl-gallery-frame-inner .jl-skeleton-loading{
+        width: 86%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        position: absolute;
+        top: 3%;
+        left: 7%;
+        z-index: 1250;
+       
+    }
+    .jl-gallery-frame-inner .jl-skeleton-loading > div{
+        width: 90%;
+        background-color: #dedede;
+        margin: 10% 0;
+        border-radius: 8px;
+        background-image: url('../images/skeleton-loading-blur.svg');
+        background-repeat: no-repeat;
+        background-position: -100% -150px;
+        animation: skeletonBlur 2s infinite ease-out;
+    }
+    .jl-gallery-frame-inner .jl-skeleton-loading > div:first-child, .jl-gallery-frame-inner .jl-skeleton-loading > div:last-child{
+       height: 15%;
+    }
+    .jl-gallery-frame-inner .jl-skeleton-loading > div:nth-child(2){
+        height: 60%;
+
+    }
+
+    .jl-gallery-frame-container .jl-items-next-prev{
+        width: 130px;
+        margin: 65px auto 0 auto;
     }
     .jl-close-gallery{
         width: 42px;

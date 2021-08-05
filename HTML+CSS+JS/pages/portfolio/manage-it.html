@@ -34,9 +34,34 @@
                 <ion-icon name="close"></ion-icon>
             </button>
             <img src="img/frame-smartphone.png" class="jl-gallery-frame" />
-            <img src="" class="jl-gallery-frame-image" />
+
+            <div class="jl-skeleton-loading">
+                <div></div>
+                <div></div>
+                <div></div>
+
+            </div>
+
+            <img src="" class="jl-gallery-frame-image" data-index="" />
         </div>
 
+        <div class="jl-items-next-prev ">
+            <div class="jl-item-prev">
+                <ion-icon name="arrow-dropleft"></ion-icon>
+
+            </div>
+
+            <div class="jl-items-counter">
+                <span class="jl-current-slide">01</span>
+                / <span class="jl-total-slide">05</span>
+            </div>
+
+            <div class="jl-item-next">
+                <ion-icon name="arrow-dropright"></ion-icon>
+
+            </div>
+
+        </div>
     </div>
 
 
@@ -91,7 +116,7 @@
             <div class="container ">
                 <div class="row jl-text-light jl-hero-inner align-items-center">
                     <div class="col-sm-12 jl-hero-inner-content  ">
-                        <div class="row">
+                        <div class="row jl-zindex-1000">
                             <div class="col-sm-12 ">
                                 <h1 class="jl-title jl-title-medium">Manage It! Aplicativo Mobile</h1>
                             </div>
@@ -214,52 +239,64 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-1.png" src="img/app-1-low.gif" alt="Tela do App Manage It 1"
-                                title="Tela do App Manage It 1" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="1" data-src="img/app-1.png" src="img/app-1-low.gif"
+                                alt="Tela do App Manage It 1" title="Tela do App Manage It 1"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-2.png" src="img/app-2-low.gif" alt="Tela do App Manage It 2"
-                                title="Tela do App Manage It 2" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="2" data-src="img/app-2.png" src="img/app-2-low.gif"
+                                alt="Tela do App Manage It 2" title="Tela do App Manage It 2"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-3.png" src="img/app-3-low.gif" alt="Tela do App Manage It 3"
-                                title="Tela do App Manage It 3" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="3" data-src="img/app-3.png" src="img/app-3-low.gif"
+                                alt="Tela do App Manage It 3" title="Tela do App Manage It 3"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-4.png" src="img/app-4-low.gif" alt="Tela do App Manage It 4"
-                                title="Tela do App Manage It 4" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="4" data-src="img/app-4.png" src="img/app-4-low.gif"
+                                alt="Tela do App Manage It 4" title="Tela do App Manage It 4"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-5.png" src="img/app-5-low.gif" alt="Tela do App Manage It 5"
-                                title="Tela do App Manage It 5" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="5" data-src="img/app-5.png" src="img/app-5-low.gif"
+                                alt="Tela do App Manage It 5" title="Tela do App Manage It 5"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-6.png" src="img/app-6-low.gif" alt="Tela do App Manage It 6"
-                                title="Tela do App Manage It 6" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="6" data-src="img/app-6.png" src="img/app-6-low.gif"
+                                alt="Tela do App Manage It 6" title="Tela do App Manage It 6"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-7.png" src="img/app-7-low.gif" alt="Tela do App Manage It 7"
-                                title="Tela do App Manage It 7" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="7" data-src="img/app-7.png" src="img/app-7-low.gif"
+                                alt="Tela do App Manage It 7" title="Tela do App Manage It 7"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-8.png" src="img/app-8-low.gif" alt="Tela do App Manage It 8"
-                                title="Tela do App Manage It 8" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="8" data-src="img/app-8.png" src="img/app-8-low.gif"
+                                alt="Tela do App Manage It 8" title="Tela do App Manage It 8"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-9.png" src="img/app-9-low.gif" alt="Tela do App Manage It 9"
-                                title="Tela do App Manage It 9" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="9" data-src="img/app-9.png" src="img/app-9-low.gif"
+                                alt="Tela do App Manage It 9" title="Tela do App Manage It 9"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-10.png" src="img/app-10-low.gif" alt="Tela do App Manage It 10"
-                                title="Tela do App Manage It 10" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="10" data-src="img/app-10.png" src="img/app-10-low.gif"
+                                alt="Tela do App Manage It 10" title="Tela do App Manage It 10"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-11.png" src="img/app-11-low.gif" alt="Tela do App Manage It 11"
-                                title="Tela do App Manage It 11" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="11" data-src="img/app-11.png" src="img/app-11-low.gif"
+                                alt="Tela do App Manage It 11" title="Tela do App Manage It 11"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
                         <div class="col-sm-3 jl-mar-bottom-30">
-                            <img data-src="img/app-12.png" src="img/app-12-low.gif" alt="Tela do App Manage It 12"
-                                title="Tela do App Manage It 12" class="jl-img-responsive jl-thumb-img" />
+                            <img data-item="12" data-src="img/app-12.png" src="img/app-12-low.gif"
+                                alt="Tela do App Manage It 12" title="Tela do App Manage It 12"
+                                class="jl-img-responsive jl-thumb-img" />
                         </div>
 
                     </div>

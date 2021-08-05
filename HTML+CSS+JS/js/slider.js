@@ -70,11 +70,11 @@ var prevSlideAnim = function () {
 }
 //Counter Formater
 
-var counterFormater = function (n) {
+var counterFormatter = function (n) {
     if (n < 10) {
         return '0' + n;
     } else {
-        return;
+        return n;
     }
 }
 
@@ -83,8 +83,8 @@ var counterFormater = function (n) {
 var counterAdd = function () {
     if ((currentCounter >= 0) && (currentCounter < sliderTotalItems)) {
         currentCounter++;
-        currentSlide.innerHTML = counterFormater(currentCounter)
-        navCounter.innerHTML = counterFormater(currentCounter)
+        currentSlide.innerHTML = counterFormatter(currentCounter)
+        navCounter.innerHTML = counterFormatter(currentCounter)
     }
 }
 
@@ -93,8 +93,8 @@ var counterAdd = function () {
 var counterRemove = function () {
     if ((currentCounter > 1) && (currentCounter <= sliderTotalItems)) {
         currentCounter--;
-        currentSlide.innerHTML = counterFormater(currentCounter)
-        navCounter.innerHTML = counterFormater(currentCounter)
+        currentSlide.innerHTML = counterFormatter(currentCounter)
+        navCounter.innerHTML = counterFormatter(currentCounter)
     }
 }
 
@@ -151,7 +151,7 @@ var changeActive = function () {
 }
 
 //ACTIONS
-totalSlide.innerHTML = counterFormater(sliderTotalItems);
+totalSlide.innerHTML = counterFormatter(sliderTotalItems);
 
 anime({
     targets: '.jl-item-active',
