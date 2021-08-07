@@ -66,7 +66,7 @@ var postGallery = document.querySelector('.jl-post-gallery');
 var postGalleryHeight = postGallery.clientHeight;
 postGallery.style.height = (postGalleryHeight - 270) + 'px';
 
-//Animando elementos com scroll com Waypoints   
+//Animando elementos com scroll e Waypoints   
 var myScrollDown = document.querySelector('.jl-scroll-down');
 var waypoint = new Waypoint({
     element: myScrollDown,

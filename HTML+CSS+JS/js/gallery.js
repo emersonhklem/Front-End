@@ -1,3 +1,5 @@
+//Declarando Variáveis 
+
 var overlay = document.querySelector('.jl-overlay');
 var frameContainer = document.querySelector('.jl-gallery-frame-container');
 var frameImage = document.querySelector('.jl-gallery-frame-image');
@@ -40,7 +42,7 @@ const skeletonAnim = function (imagem) {
 
 
 
-//Opem Gallery Modal
+//Open Gallery Modal
 const getImageSrc = function () {
     for (var i = 0; i < galleryImages.length; i++) {
         galleryImages[i].addEventListener('click', function () {
@@ -134,15 +136,5 @@ btnPrev.addEventListener('click', function () {
 })
 
 
-//Identificamos o item ideal no frame
-
-
-//Definimos o número do próximo item
-
-//Fazemos o loop eidentificamos qual item faz match com o numero do proximo item 
-
-//Capturamos o data-src
-
-//passamos o data-src para a tag de img no frame
 
 

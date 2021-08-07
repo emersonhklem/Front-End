@@ -363,12 +363,27 @@ p, label{
     .jl-display-text {
         margin-top: 5%;
     }
-    #jl-home-presentation {
+    .jl-home-presentation {
         background-image: url('../images/joao-lemon-designer-home.png');
         background-repeat: no-repeat;
         background-position: 55% bottom;
         position: relative;
+        background-size: 50% auto;
     }
+    .jl-home-presentation h1{
+        margin-top: 50px;
+        text-align: center;
+    }
+    .jl-home-presentation p{
+      
+        text-align: center;
+    }
+    .jl-home-presentation .jl-btn{
+        margin-left: auto;
+        margin-right: auto;
+    }
+   
+
     
     .jl-scroll-down {
         width: 60px;
@@ -535,17 +550,26 @@ p, label{
     }
 
     .jl-slider-list .jl-portfolio-item-info {
-        width: calc(100% - 30px);
+        width: 100%;
         display: table;
         margin-top: 40px;
         position: relative;
         opacity: 0;
-        left: -75px;
+ 
     }
     .jl-portfolio-list .jl-portfolio-item-info {
         width: calc(100% - 30px);
        
     }
+   .jl-slider-list .jl-portfolio-item-info p{
+       text-align: center;
+
+    }
+    .jl-slider-list .jl-portfolio-item-info button{
+        margin: 0 auto;
+ 
+     }
+
     .jl-portfolio-list{
         list-style: none;
     }
@@ -815,15 +839,33 @@ p, label{
         top: 16px;
     }
 
+/* Utilitárias*/
 
+.jl-title-xlarge {
+    font-size: 90px;
+}
+.jl-title-large {
+    font-size: 60px;
+    text-align: center;
+}
 
 
 }
 @media screen and (min-width: 576px) {
-    
+   
+}
+@media screen and (min-width: 700px) {
+    .jl-home-presentation{
+        background-size: 100%;
+    }
 }
 @media screen and (min-width: 768px) {
-    
+    .jl-home-presentation{
+        background-size: 80%;
+    }
+    .jl-title-large {
+        font-size: 48px;
+    }
 }
 @media screen and (min-width: 992px) {
     .jl-menu-mob, .jl-btn-menu-mob{
@@ -869,10 +911,81 @@ p, label{
     .jl-menu a:hover:before{   
         transform: scale(1, 1);
     }
-    
+    .jl-title-xlarge {
+        font-size: 90px;
+    }
+    .jl-home-presentation {
+       
+        background-size: auto;
+    }
+    .jl-home-presentation h1{
+        margin-top: 0;
+        text-align: left;
+    }
+    .jl-home-presentation p{
+        text-align: left;
+    }
+    .jl-home-presentation .jl-btn{
+        margin-left: 0;
+    }
+    .jl-slider-list .jl-portfolio-item-thumb {
+        padding: 30px 0 19px 0;
+        margin-top: 30px;
+    }
+    .jl-slider-list .jl-portfolio-item-thumb img{
+        width: 120%;
+        max-width: 120%;
+        left: -105px;
+    }
+    .jl-slider-list .jl-portfolio-item-thumb > button{
+        margin-right: 25px;
+    }
+    .jl-navigator-counter span{
+        font-size: 80px;
+    }
+    .jl-navigator-counter::before{
+    width: 22px;
+    }
+    .jl-title-large, .jl-slider-list .jl-portfolio-item-info p{
+        text-align: left;
+    }
+   .jl-slider-list .jl-portfolio-item-info{
+    width: calc(100% - 30px);
+    left: -75px;
+   }
+   .jl-slider-list .jl-portfolio-item-info button{
+    margin: 0 ;
+
+ }
 }
-@media screen and (min-width: 1200px) {
     
+
+@media screen and (min-width: 1200px) {
+    .jl-title-large{
+        font-size: 64px;
+    }
+    .jl-slider-list .jl-portfolio-item-thumb {
+        padding: 50px 0 19px 0;
+        margin-top: 10px;
+    }
+    .jl-slider-list .jl-portfolio-item-thumb img{
+        width: 100%;
+        max-width: 100%;
+        left: -50px;
+    }
+    .jl-slider-list .jl-portfolio-item-thumb > button{
+        margin-right: 50px;
+
+    }
+    .jl-navigator-counter span{
+        font-size: 100px;
+ 
+
+    }.jl-navigator-counter::before{
+    width: 28px;
+ 
+
+    }
 }
 @media screen and (min-width: 1364px) {
     
@@ -958,13 +1071,9 @@ p, label{
     .jl-title-medium {
         font-size: 36px;
     }
-    .jl-title-large {
-        font-size: 44px;
-    }
+    
 
-    .jl-title-xlarge {
-        font-size: 90px;
-    }
+    
     .jl-text-green{
         color: #2CCB69;
     }
