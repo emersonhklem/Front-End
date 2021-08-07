@@ -580,11 +580,14 @@ p, label{
         position: relative;
         right: -70px;
     }
-    .jl-slider-list .jl-portfolio-item-thumb > button, .jl-portfolio-list .jl-portfolio-item-thumb > button{
+     .jl-portfolio-list .jl-portfolio-item-thumb > button{
         margin-top: 17px;
         margin-right: 50px;
         float:right;
-
+    }
+    .jl-slider-list .jl-portfolio-item-thumb > button{
+        margin: 17px auto 0 auto;
+        float:none;
     }
     .jl-slider-list .jl-portfolio-item-box{
         width: 100%;
@@ -609,11 +612,11 @@ p, label{
     }
 
     .jl-slider-list .jl-portfolio-item-thumb img{
-        width: 100%;
+        width: 90%;
         max-width: 100%;
         height: auto;
         position: relative;
-        left: -50px;
+        left: -16%;
         transform: scale(0);
     }
     .jl-portfolio-list .jl-portfolio-item-thumb img{
@@ -845,7 +848,7 @@ p, label{
     font-size: 90px;
 }
 .jl-title-large {
-    font-size: 60px;
+    font-size: 36px;
     text-align: center;
 }
 
@@ -974,7 +977,8 @@ p, label{
         left: -50px;
     }
     .jl-slider-list .jl-portfolio-item-thumb > button{
-        margin-right: 50px;
+        margin: 17px 6.5% 0 auto;
+        float:right;
 
     }
     .jl-navigator-counter span{
