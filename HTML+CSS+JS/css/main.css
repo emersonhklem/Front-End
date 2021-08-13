@@ -133,14 +133,14 @@ p, label{
     }
 
     .jl-modal {
-        width: 800px;
+        width: 90%;
         display: none;
         padding: 30px;
         border-radius: 0 30px 30px 30px;
-        position: fixed;
+        position: absolute;
         top: -100%;
-        left: 0;
-        right: 0;
+        left: 5%;
+        right: 5%;
         margin: 0 auto;
         z-index: 1200;
         opacity: 0;
@@ -150,6 +150,9 @@ p, label{
         display: table;
         position: relative;
 
+    }
+    .jl-modal-header h1{
+        line-height: 28px;
     }
     .jl-close-modal {
         width: 38px;
@@ -166,19 +169,19 @@ p, label{
         background-color: #2f2f2f;
     }
     .jl-form label {
-        margin-bottom: 10px;
-        font-size: 16px;
+        margin-bottom: 3px;
+        font-size: 14px;
         display: inline-block;
     }
     .jl-field, textarea{
          width: 100%;
-    
          background-color: #2f2f2f;
          border-radius: 4px;
          color: #fff;
          border: none;
          font-size: 16px;
          text-indent: 15px;
+         margin-bottom: 7px;
 
     }
     .jl-field {
@@ -368,7 +371,7 @@ p, label{
         background-repeat: no-repeat;
         background-position: 55% bottom;
         position: relative;
-        background-size: 50% auto;
+        background-size: 120% auto;
     }
     .jl-home-presentation h1{
         margin-top: 50px;
@@ -442,14 +445,13 @@ p, label{
     /* ---- HOME -- PORTFOLIO ---- */
 
     .jl-portfolio-navigator {
-        width: 115px;
-        height: 350px;
+        width: 68%;
+        height: auto;
         display: table;
-
-        position: absolute;
+        position: relative;
         left: 0px;
-        top: 30vh;
-       
+        bottom: 15px;
+        z-index: 900;
     }
     .jl-navigator-counter {
         width: 100%;
@@ -500,7 +502,7 @@ p, label{
         width: 100%;
         height: 35px;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         background-color: #2c2c2c;
         border-radius: 23px;
@@ -531,19 +533,20 @@ p, label{
         
         display: block;
         overflow: hidden;
+       padding-bottom: 20px;
     }
     .jl-slider-list {
         width: auto;
-        height: 500px;
+
         display: block;
        
         list-style: none;
     }
     .jl-slider-list .jl-portfolio-item {
         display: block;
-        height: 350px;
+        height: auto;
         float: left;
-        margin-top: calc(30vh - 75px);
+        margin-top: 0;
     }
     .jl-portfolio-list .jl-portfolio-item{
         margin-bottom: 70px;
@@ -552,7 +555,7 @@ p, label{
     .jl-slider-list .jl-portfolio-item-info {
         width: 100%;
         display: table;
-        margin-top: 40px;
+        margin-top: 10px;
         position: relative;
         opacity: 0;
  
@@ -573,7 +576,14 @@ p, label{
     .jl-portfolio-list{
         list-style: none;
     }
-    .jl-slider-list .jl-portfolio-item-thumb, .jl-portfolio-list .jl-portfolio-item-thumb {
+    .jl-slider-list .jl-portfolio-item-thumb {
+        width: 100%;
+        display: table;
+        padding: 25px 0 19px 0;
+        position: relative;
+        right: -70px;
+    }
+    .jl-portfolio-list .jl-portfolio-item-thumb {
         width: 100%;
         display: table;
         padding: 50px 0 19px 0;
@@ -851,7 +861,11 @@ p, label{
     font-size: 36px;
     text-align: center;
 }
-
+.jl-full-height{
+    height: auto;
+    position: relative;
+   
+}
 
 }
 @media screen and (min-width: 576px) {
@@ -869,6 +883,7 @@ p, label{
     .jl-title-large {
         font-size: 48px;
     }
+   
 }
 @media screen and (min-width: 992px) {
     .jl-menu-mob, .jl-btn-menu-mob{
@@ -931,10 +946,24 @@ p, label{
     .jl-home-presentation .jl-btn{
         margin-left: 0;
     }
+    .jl-portfolio-navigator {
+        width: 115px;
+        height: 350px;
+        left: 0px;
+        top: 30vh;
+       
+    }
+    .jl-slider-container{
+        padding-bottom: 0;
+    }
+   
     .jl-slider-list .jl-portfolio-item-thumb {
+  
         padding: 30px 0 19px 0;
         margin-top: 30px;
+
     }
+   
     .jl-slider-list .jl-portfolio-item-thumb img{
         width: 120%;
         max-width: 120%;
@@ -949,21 +978,47 @@ p, label{
     .jl-navigator-counter::before{
     width: 22px;
     }
+    .jl-items-next-prev {
+        justify-content: center;
+    }
     .jl-title-large, .jl-slider-list .jl-portfolio-item-info p{
         text-align: left;
     }
-   .jl-slider-list .jl-portfolio-item-info{
+    .jl-slider-list .jl-portfolio-item {
+        display: block;
+        height: 350px;
+        float: left;
+        margin-top: calc(30vh - 75px);
+    }
+  
+    .jl-slider-list .jl-portfolio-item-info{
     width: calc(100% - 30px);
     left: -75px;
-   }
+    margin-top: 73px;
+    }
    .jl-slider-list .jl-portfolio-item-info button{
     margin: 0 ;
+    }
+ 
 
- }
+    /* ------- Utilitárias -------*/
+    .jl-full-height{
+        height: 100vh;
+    
+       
+    }
 }
     
 
 @media screen and (min-width: 1200px) {
+    .jl-modal {
+        width: 800px;
+    }
+    .jl-field, textarea{
+
+        margin-bottom: 15px;
+
+   }
     .jl-title-large{
         font-size: 64px;
     }
@@ -990,6 +1045,10 @@ p, label{
  
 
     }
+
+}
+@media screen and (min-width: 1330px) {
+    
 }
 @media screen and (min-width: 1364px) {
     
@@ -1206,11 +1265,7 @@ p, label{
         padding: 30px;
     }
 
-    .jl-full-height{
-        height: 100vh;
-        position: relative;
-       
-    }
+   
     .jl-first-section{
         height: calc(100vh - 30px);
     }
