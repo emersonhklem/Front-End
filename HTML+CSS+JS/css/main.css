@@ -94,7 +94,105 @@ p, label{
 
 }
 
+@keyframes topbarBg{
+    from {
+        background: transparent;
+     }
+    to {
+          /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0+100;Neutral+Density */
+background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 
+    }
+
+}
+@keyframes logoShorten{
+    from {
+        top: 0;
+     }
+    to {
+       top: -28px;
+    }
+
+}
+
+@keyframes logoBig{
+    from {
+        top: -28px;
+     }
+    to {
+       top: 0;
+    }
+
+}
+
+.jl-trigger-topbar{
+    width: 1px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 130px;
+
+}
+.border-top-left, .border-bottom-right{
+    width: 30px;
+    height: 30px;
+    display: block  ;
+    position: fixed;
+    z-index: 800;
+
+}
+.border-top-left{
+    top: 0;
+    left: 0;
+}
+.border-bottom-right{
+    bottom: 0;
+    right: 0;
+
+}
+
+ .border-top-left::before, .border-top-left::after{
+    content: '';
+    display: block;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+ }
+
+ .border-top-left::before{
+    width: 30px;
+    height: 100vh;
+ }
+ 
+ .border-top-left::after{
+     width: 100vw;
+     height: 30px; 
+  }
+
+
+  .border-bottom-right, .border-bottom-right::after{
+    content: '';
+    display: block;
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+ }
+
+ .border-bottom-right{
+    width: 30px;
+    height: 100vh;
+ }
+ 
+ .border-bottom-right::after{
+     width: 100vw;
+     height: 30px; 
+  }
 
 
 @media screen and (min-width: 320px) {
@@ -193,12 +291,17 @@ p, label{
         width: 100%;
         height: 110px;
         display: block;
-        background-color:transparent;
+        background:transparent;
         position: fixed;
         top: 0;
         left: 0;
         z-index: 900;
+        transition: all 0.2s ease-out;
     }
+    .jl-topbar-bg{
+        animation: topbarBg 0.2s ease-out forwards;
+    }
+
     .jl-logo{
         width: 74px;
         height: 110px;
@@ -206,7 +309,15 @@ p, label{
         margin-left: 60px;
         background-color: #2CCB69;
         border-radius: 0 0 37px 0;
-        
+        transition: all 0.2s ease-out;
+        position: relative;
+
+    }
+    .jl-logo-big{
+        animation: logoBig 0.2s ease-out forwards;
+     }
+    .jl-logo-shorten{
+       animation: logoShorten 0.2s ease-out forwards;
     }
     
     .jl-logo img{
@@ -390,7 +501,7 @@ p, label{
     
     .jl-scroll-down {
         width: 60px;
-        height: 95px;
+        height: 120px;
         border-radius: 35px 35px 0 0;
         background-color: #2CCB69;
         display: block;
@@ -549,7 +660,7 @@ p, label{
         margin-top: 0;
     }
     .jl-portfolio-list .jl-portfolio-item{
-        margin-bottom: 70px;
+        margin-bottom: 15px;
     }
 
     .jl-slider-list .jl-portfolio-item-info {
@@ -561,7 +672,7 @@ p, label{
  
     }
     .jl-portfolio-list .jl-portfolio-item-info {
-        width: calc(100% - 30px);
+        width: 100%;
        
     }
    .jl-slider-list .jl-portfolio-item-info p{
@@ -574,6 +685,7 @@ p, label{
      }
 
     .jl-portfolio-list{
+ 
         list-style: none;
     }
     .jl-slider-list .jl-portfolio-item-thumb {
@@ -591,9 +703,8 @@ p, label{
         right: -70px;
     }
      .jl-portfolio-list .jl-portfolio-item-thumb > button{
-        margin-top: 17px;
-        margin-right: 50px;
-        float:right;
+        margin: 17px auto 0 auto;
+        float:none;
     }
     .jl-slider-list .jl-portfolio-item-thumb > button{
         margin: 17px auto 0 auto;
@@ -634,7 +745,7 @@ p, label{
         max-width: 100%;
         height: auto;
         position: relative;
-        left: -50px;
+ 
         
     }
    
@@ -645,17 +756,22 @@ p, label{
     .jl-section-offset-top{
         margin-top: 110px;
     }
-    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info{
-       text-align: right;
-       margin-top: 35px;
+    .jl-portfolio-list .jl-portfolio-item  .jl-portfolio-item-info{
+        width: 100%;
+       
     }
     
-    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info button{
-        float: right;
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info button, .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info button{
+        float: none;
+        margin: 0 auto;
+     }
+     .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info p, .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info p{
+        text-align: center;
      }
      
      .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info{
-        margin-left: 170px;
+        width: 100%;    
+        margin-left: 20px;
      }
      
      .jl-portfolio-list .jl-portfolio-item:nth-child(even) > .row{
@@ -668,20 +784,49 @@ p, label{
         float: left;
         margin-left: 50px;
      }
-     .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-thumb img{
-       left: 50px;
+     .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-thumb button{
+        float: left;
+        margin-left: 50px;
      }
+     .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-thumb img{
+       display:block;
+   left: -70px;
+     }
+     .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-thumb img{
+        display:block;
+        left: -70px;
+      }
+     
 
      /* ----- SOBRE ----- */
 
-     #jl-avatar-sobre img{
-         position: relative;
-         left: -12px;
+.jl-section-sobre{
+    height: calc(100% - 110px);
+}
 
-     }
+.jl-section-sobre .container-fluid, .jl-section-sobre .container-fluid > .row {
+    height: 100%;
+}
+.jl-avatar-sobre{
+    position: relative;
+    height: 430px;
+}
+.jl-box-img{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.jl-title-sobre, .jl-info-sobre, .jl-awards-sobre{
+    width: 100%;
+    display: table;
+    float:left;
+    margin-bottom: 30px;
+}
+
+   
      /* ----- DESTALHES ----- */
      .jl-hero{
-         height: 400px;
+        
          background-image: url('../pages/portfolio/img/hero.png');
          background-repeat: no-repeat;
          background-size: cover;
@@ -696,11 +841,18 @@ p, label{
        
     }
      .jl-hero-inner{
-         height: 400px;  
+     display: table;
+     padding: 65px 0; 
        
      }
      .jl-hero-inner-content{
-         position: relative; 
+  
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: block;
+       
+        padding: 10px 20px 20px;
       
     
      }
@@ -708,19 +860,7 @@ p, label{
         margin-bottom: 15px;
    
     }
-     .jl-hero-inner-content:before{
-         content: '';
-         width: 100%;
-         height: 100%;
-         background-color: rgba(0, 0, 0, 0.85);
-         display: block;
-         position: absolute;
-         left: -30px;
-         top: -30px;
-         box-sizing: content-box;
-         padding: 30px;
-           
-     }
+    
      .jl-zindex-1000{
          position: relative;
          z-index: 100;
@@ -729,8 +869,14 @@ p, label{
          width: 100%;
          height: 100%;
          display: table;
-         border-right: 1px solid #2CCB69;
+         border-right: none;
         
+     }
+     .jl-project-description{
+        width: 100%;
+        height: 100%;
+        display: table;
+        margin-top: 30px;
      }
 
      .jl-post{
@@ -756,9 +902,32 @@ p, label{
         position: relative;
         top: -270px;
     }
-    
+    .jl-thumb-box{
+        width: auto;
+        display: block;
+        position: relative;
+    }
+    .jl-thumb-box::before{
+        content: '';
+        width: 90%;
+        height: 100%;
+        background-color: rgba(44, 203, 105, 0.85);
+        background-image: url('../images/icon-see-more.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 700;
+
+    }
+    .jl-thumb-box:hover:before{
+        display: block;
+        cursor: pointer;
+    }
     .jl-gallery-frame-container{
-        width: 250px;
+        width: 60%;
         display: none;
         position: fixed;
         top: 50px;
@@ -809,7 +978,7 @@ p, label{
 
     .jl-gallery-frame-container .jl-items-next-prev{
         width: 130px;
-        margin: 65px auto 0 auto;
+        margin: 45px auto 0 auto;
     }
     .jl-close-gallery{
         width: 42px;
@@ -852,6 +1021,23 @@ p, label{
         top: 16px;
     }
 
+    /* ------ 404 ------ */
+
+    .jl-404 h1, .jl-404 p {
+        text-align: center;
+    }
+
+    .jl-404 .jl-btn{
+        margin: 15px auto;
+    }
+        .jl-404 img{
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
 /* Utilitárias*/
 
 .jl-title-xlarge {
@@ -866,10 +1052,41 @@ p, label{
     position: relative;
    
 }
+.jl-text-center-mob{
+    text-align: center;
+}
+
+@media screen and (min-width: 360px) {
+    .jl-gallery-frame-container{
+        width: 70%;
+     
+    }
+  
+}
+@media screen and (min-width: 400px) {
+    .jl-avatar-sobre{
+       height: 550px;
+     
+    }
+    .jl-box-img{
+        width: 370px;
+    }
+  
+}
 
 }
 @media screen and (min-width: 576px) {
    
+    .jl-hero-inner-content{
+        padding: 20px 65px 65px;
+     }
+      /* ------ 404 ------ */
+
+    .jl-404 img{
+        width: 80%;
+        max-width: 80%;
+    }
+     
 }
 @media screen and (min-width: 700px) {
     .jl-home-presentation{
@@ -882,6 +1099,12 @@ p, label{
     }
     .jl-title-large {
         font-size: 48px;
+    }
+    .jl-text-center-mob{
+        text-align: left;
+    }
+    .jl-box-img{
+        width: 350px;
     }
    
 }
@@ -965,13 +1188,59 @@ p, label{
     }
    
     .jl-slider-list .jl-portfolio-item-thumb img{
-        width: 120%;
-        max-width: 120%;
-        left: -105px;
+        width: calc(100% + 45px);
+        max-width: calc(100% + 45px);
+        left: -75px;
     }
     .jl-slider-list .jl-portfolio-item-thumb > button{
         margin-right: 25px;
     }
+    .jl-portfolio-list .jl-portfolio-item{
+        margin-bottom: 70px;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info{
+     
+        text-align: right;
+        margin-top: 35px;
+     }
+     
+     .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info button{
+         float: right;
+      }
+      .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info h1,  .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info h1{
+        text-align: right;
+     }
+      .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info{
+        margin-left: 60px;
+     }
+     .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info button{
+        float: left;
+     }
+     .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info h1,  .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info h1{
+        text-align: left;
+     }
+     .jl-portfolio-list .jl-portfolio-item-thumb {
+        padding: 30px 0 19px 0;
+    }
+    .jl-portfolio-list .jl-portfolio-item-thumb {
+        width: calc(100% + 45px);
+        max-width: calc(100% + 45px);
+    }
+     .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-thumb img{
+        left: -30px;
+      }
+      .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-thumb img{
+        left: 30px;
+      }
+      .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info button{
+        float: left;
+        margin-left: 75px;
+     }
+     .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info button{
+        float: right;
+        margin-right: 75px;
+     }
     .jl-navigator-counter span{
         font-size: 80px;
     }
@@ -999,7 +1268,62 @@ p, label{
    .jl-slider-list .jl-portfolio-item-info button{
     margin: 0 ;
     }
- 
+    .jl-project-stats{
+        border-right: 1px solid #2CCB69;
+    }
+    .jl-project-description{
+       
+        margin-top: 0px;
+     }
+     .jl-gallery-frame-container{
+        width: 320px;
+      
+    }
+    .jl-gallery-frame-image{
+     
+        top: 17px;
+    }
+
+    .jl-avatar-sobre{
+        height: 550px;
+    }
+
+    .jl-title-sobre {
+        width: 100%; 
+    }
+    .jl-title-sobre h1{
+        font-size: 90px;
+    }
+    .jl-info-sobre {
+        width: 55%;
+       
+    }
+    .jl-awards-sobre{
+        width: 45%;
+        padding-left: 30px;
+    }
+    .jl-box-img{
+        width: 100%;
+        display: table;
+    }
+
+     /* ------ 404 ------ */
+
+     .jl-404 h1, .jl-404 p {
+        text-align: left;
+    }
+    .jl-404 p {
+       margin-top: 110px;
+    }
+
+    .jl-404 .jl-btn{
+        margin-left: 0;
+    }
+    .jl-404 img{
+        width: 100%;
+        max-width: 100%;
+    }
+
 
     /* ------- Utilitárias -------*/
     .jl-full-height{
@@ -1009,6 +1333,11 @@ p, label{
     }
 }
     
+@media screen and (min-width: 1024px) and (max-width:1024px){
+    .jl-avatar-sobre{
+        height: 500px;
+    }
+}
 
 @media screen and (min-width: 1200px) {
     .jl-modal {
@@ -1020,7 +1349,7 @@ p, label{
 
    }
     .jl-title-large{
-        font-size: 64px;
+        font-size: 50px;
     }
     .jl-slider-list .jl-portfolio-item-thumb {
         padding: 50px 0 19px 0;
@@ -1036,6 +1365,19 @@ p, label{
         float:right;
 
     }
+    .jl-portfolio-list .jl-portfolio-item-thumb {
+        padding: 50px 0 19px 0;
+    }
+    .jl-portfolio-list .jl-portfolio-item-thumb {
+        width: 100% ;
+        max-width: 100%;
+    }
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-thumb img{
+        left: -50px;
+      }
+      .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-thumb img{
+        left: 50px;
+      }
     .jl-navigator-counter span{
         font-size: 100px;
  
@@ -1045,16 +1387,56 @@ p, label{
  
 
     }
-
+    .jl-title-sobre h1{
+        font-size: 120px;
+    }
+   
 }
 @media screen and (min-width: 1330px) {
     
 }
 @media screen and (min-width: 1364px) {
+    .jl-gallery-frame-container{
+        width: 250px;
+    }
+   
+        .jl-info-sobre {
+            width: 48%;
+           
+        }
+        .jl-awards-sobre{
+            width: 37%;
+           
+        }
     
 }
+
+@media screen and (min-width: 1500px) {
+    .jl-info-sobre {
+        width: 43%;
+       
+    }
+    .jl-awards-sobre{
+        width: 31%;
+       
+    }
+}
 @media screen and (min-width: 1600px) {
-    
+    .jl-gallery-frame-container{
+        width: 300px;
+      
+    }
+}
+
+@media screen and (min-width: 1740px) {
+    .jl-info-sobre {
+        width: 35%;
+       
+    }
+    .jl-awards-sobre{
+        width: 31%;
+       
+    }
 }
 /* BOTÕES */
 
@@ -1067,6 +1449,7 @@ p, label{
     transition: all 0.2s ease-out;
     text-transform: lowercase;
     position: relative;
+    text-decoration: none;
 }
 .jl-btn ion-icon {
     font-size: 21px;
@@ -1092,7 +1475,7 @@ p, label{
 .jl-btn-medium {
     height: 38px;
     line-height: 38px;
-    padding: 0 27px;
+    padding: 0 20px;
     border-radius: 19px;
     font-size: 14px;
 
@@ -1272,15 +1655,12 @@ p, label{
     .jl-no-padding {
         padding: 0 !important;
     }
-    .jl-box-img{
-        width: 100%;
-        display: table;
-    }
+    
 
     .jl-img-responsive{
-        width: 100%;
+        width: 90%;
         max-width: 100%;
-        height: auto;
+        height: 500px;
         display: block;
     }
     .jl-page-list{

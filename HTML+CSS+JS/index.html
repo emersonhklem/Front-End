@@ -12,9 +12,17 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>João Lennon - UX/UI Designer</title>
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
+
+    <div class="jl-trigger-topbar"></div>
+    <div class="border-top-left"></div>
+    <div class="border-bottom-right"></div>
+
+
     <div class="jl-preloader">
         <div class="jl-preloader-inner">
             <img src="images/lemon-loader.svg" class="jl-mar-bottom-15" />
@@ -89,7 +97,7 @@
 
 
     <header class="jl-topbar">
-        <div class="jl-logo">
+        <div class="jl-logo jl-logo-big">
             <img src="images/logo.svg" alt="Logo João Lennon UX/UI Designer" />
         </div>
 
@@ -227,7 +235,8 @@
                             <ul class="jl-slider-list jl-full-height">
                                 <li class="jl-portfolio-item jl-slide-active " data-slide="1">
                                     <div class="row">
-                                        <div class="col-sm-12 col-md-12 col-lg-3 order-2 order-sm-2 order-md-1">
+                                        <div
+                                            class="col-sm-12 col-md-12 col-lg-3 col-xl-4 order-2 order-sm-2 order-md-1">
                                             <div class="jl-portfolio-item-info jl-text-light jl-fade-from-left">
                                                 <h1 class="jl-title jl-title-large jl-mar-bottom-15">Startup Rocketz
                                                     Website</h1>
@@ -239,15 +248,16 @@
 
                                         </div>
                                         <div
-                                            class="col-sm-12 col-md-12 col-lg-6 offset-lg-1 order-1 order-sm-1 order-md-2">
+                                            class="col-sm-12 col-md-12 col-lg-6 col-xl-5 offset-lg-1 order-1 order-sm-1 order-md-2">
                                             <div class="jl-portfolio-item-thumb">
                                                 <div
                                                     class="jl-portfolio-item-box d-none d-sm-none d-lg-block jl-scale-right">
                                                 </div>
                                                 <img src="images/thumb-1.jpg" alt="Startup Rocketz"
                                                     title="Startup Rocketz" class="jl-scale-up" />
-                                                <button class="jl-btn jl-btn-medium jl-btn-dark">visitar site <ion-icon
-                                                        name="share-alt"></ion-icon></button>
+                                                <button class="jl-btn jl-btn-medium jl-btn-dark">visitar site
+                                                    <ion-icon name="share-alt"></ion-icon>
+                                                </button>
 
                                             </div>
 
@@ -258,7 +268,8 @@
                                 </li>
                                 <li class="jl-portfolio-item " data-slide="2">
                                     <div class="row">
-                                        <div class="col-sm-12 col-md-12 col-lg-3 order-2 order-sm-2 order-md-1">
+                                        <div
+                                            class="col-sm-12 col-md-12 col-lg-3 col-xl-4 order-2 order-sm-2 order-md-1">
                                             <div class="jl-portfolio-item-info jl-text-light">
                                                 <h1 class="jl-title jl-title-large jl-mar-bottom-15">Manage It!
                                                     Aplicativo Mobile
@@ -271,12 +282,14 @@
 
                                         </div>
                                         <div
-                                            class="col-sm-12 col-md-12 col-lg-6 offset-lg-1 order-1 order-sm-1 order-md-2">
+                                            class="col-sm-12 col-md-12 col-lg-6 col-xl-5  offset-lg-1 order-1 order-sm-1 order-md-2">
                                             <div class="jl-portfolio-item-thumb">
                                                 <div class="jl-portfolio-item-box d-none d-sm-none d-lg-block"></div>
                                                 <img src="images/thumb-2.jpg" alt="Manage It" title="Manage It" />
-                                                <button class="jl-btn jl-btn-medium jl-btn-dark">visitar site <ion-icon
-                                                        name="share-alt"></ion-icon></button>
+                                                <button class="jl-btn jl-btn-medium jl-btn-dark"> <a
+                                                        href="pages/portfolio/manage-it.html">visitar site</a>
+                                                    <ion-icon name="share-alt"></ion-icon>
+                                                </button>
 
                                             </div>
 
@@ -287,7 +300,8 @@
                                 </li>
                                 <li class="jl-portfolio-item " data-slide="3">
                                     <div class="row">
-                                        <div class="col-sm-12 col-md-12 col-lg-3 order-2 order-sm-2 order-md-1">
+                                        <div
+                                            class="col-sm-12 col-md-12 col-lg-3 col-xl-4 order-2 order-sm-2 order-md-1">
                                             <div class="jl-portfolio-item-info jl-text-light">
                                                 <h1 class="jl-title jl-title-large jl-mar-bottom-15">Vinyassa!
                                                     Aplicativo Mobile</h1>
@@ -299,12 +313,13 @@
 
                                         </div>
                                         <div
-                                            class="col-sm-12 col-md-12 col-lg-6 offset-lg-1 order-1 order-sm-1 order-md-2">
+                                            class="col-sm-12 col-md-12 col-lg-6 col-xl-5 offset-lg-1 order-1 order-sm-1 order-md-2">
                                             <div class="jl-portfolio-item-thumb">
                                                 <div class="jl-portfolio-item-box d-none d-sm-none d-lg-block"></div>
                                                 <img src="images/thumb-3.jpg" alt="Vinyassa" title="Vinyassa" />
-                                                <button class="jl-btn jl-btn-medium jl-btn-dark">visitar site <ion-icon
-                                                        name="share-alt"></ion-icon></button>
+                                                <button class="jl-btn jl-btn-medium jl-btn-dark">visitar site
+                                                    <ion-icon name="share-alt"></ion-icon>
+                                                </button>
 
                                             </div>
 
@@ -315,7 +330,8 @@
                                 </li>
                                 <li class="jl-portfolio-item " data-slide="4">
                                     <div class="row">
-                                        <div class="col-sm-12 col-md-12 col-lg-3 order-2 order-sm-2 order-md-1">
+                                        <div
+                                            class="col-sm-12 col-md-12 col-lg-3  col-xl-4 order-2 order-sm-2 order-md-1">
                                             <div class="jl-portfolio-item-info jl-text-light">
                                                 <h1 class="jl-title jl-title-large jl-mar-bottom-15">Conteudo é Rei!
                                                     Website para agência.</h1>
@@ -327,12 +343,13 @@
 
                                         </div>
                                         <div
-                                            class="col-sm-12 col-md-12 col-lg-6 offset-lg-1 order-1 order-sm-1 order-md-2">
+                                            class="col-sm-12 col-md-12 col-lg-6 col-xl-5 offset-lg-1 order-1 order-sm-1 order-md-2">
                                             <div class="jl-portfolio-item-thumb">
                                                 <div class="jl-portfolio-item-box d-none d-sm-none d-lg-block"></div>
                                                 <img src="images/thumb-4.jpg" alt="Conteudo Rei" title="Conteudo Rei" />
-                                                <button class="jl-btn jl-btn-medium jl-btn-dark">visitar site <ion-icon
-                                                        name="share-alt"></ion-icon></button>
+                                                <button class="jl-btn jl-btn-medium jl-btn-dark">visitar site
+                                                    <ion-icon name="share-alt"></ion-icon>
+                                                </button>
 
                                             </div>
 
@@ -343,7 +360,8 @@
                                 </li>
                                 <li class="jl-portfolio-item " data-slide="5">
                                     <div class="row">
-                                        <div class="col-sm-12 col-md-12 col-lg-3 order-2 order-sm-2 order-md-1">
+                                        <div
+                                            class="col-sm-12 col-md-12 col-lg-3 col-xl-4 order-2 order-sm-2 order-md-1">
                                             <div class="jl-portfolio-item-info jl-text-light">
                                                 <h1 class="jl-title jl-title-large jl-mar-bottom-15">Controle Total. Web
                                                     App</h1>
@@ -354,22 +372,18 @@
 
                                         </div>
                                         <div
-                                            class="col-sm-12 col-md-12 col-lg-6 offset-lg-1 order-1 order-sm-1 order-md-2">
+                                            class="col-sm-12 col-md-12 col-lg-6 col-xl-5 offset-lg-1 order-1 order-sm-1 order-md-2">
                                             <div class="jl-portfolio-item-thumb">
                                                 <div class="jl-portfolio-item-box d-none d-sm-none d-lg-block"></div>
                                                 <img src="images/thumb-5.jpg" alt="Controle Total"
                                                     title="Controle Total" />
-                                                <button class="jl-btn jl-btn-medium jl-btn-dark">visitar site <ion-icon
-                                                        name="share-alt"></ion-icon></button>
-
+                                                <button class="jl-btn jl-btn-medium jl-btn-dark">visitar site
+                                                    <ion-icon name="share-alt"></ion-icon>
+                                                </button>
                                             </div>
-
                                         </div>
-
                                     </div>
-
                                 </li>
-
                             </ul>
                         </div>
                     </div>
@@ -378,7 +392,7 @@
         </section>
 
     </div>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"
         integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -390,6 +404,19 @@
     <script src="js/anime.min.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+        //Animando elementos com scroll e Waypoints   
+        var myScrollDown = document.querySelector('.jl-scroll-down');
+        var waypoint = new Waypoint({
+            element: myScrollDown,
+            handler: function () {
+                myScrollDown.classList.toggle('jl-fade-out');
+            },
+            offset: '80%'
+        })
+
+    </script>
 
 </body>
 

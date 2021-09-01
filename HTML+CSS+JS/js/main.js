@@ -62,16 +62,21 @@ for (var i = 0; i < toggleModal.length; i++) {
     })
 }
 
+//Animando elementos da Top bar
+var triggerTopbar = document.querySelector('.jl-trigger-topbar');
+var topbar = document.querySelector('.jl-topbar');
+var logo = document.querySelector('.jl-logo');
 
-
-//Animando elementos com scroll e Waypoints   
-var myScrollDown = document.querySelector('.jl-scroll-down');
 var waypoint = new Waypoint({
-    element: myScrollDown,
+    element: triggerTopbar,
     handler: function () {
-        myScrollDown.classList.toggle('jl-fade-out');
+        topbar.classList.toggle('jl-topbar-bg');
+        logo.classList.toggle('jl-logo-shorten');
+        logo.classList.toggle('jl-logo-big');
     },
-    offset: '80%'
+    offset: '50px'
 })
+
+
 
 
